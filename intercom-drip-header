@@ -1,0 +1,60 @@
+Delivered-To: rhysfhillier@gmail.com
+Received: by 2002:ab0:5481:0:0:0:0:0 with SMTP id p1csp2236350uaa;
+        Thu, 27 Jun 2019 09:05:55 -0700 (PDT)
+X-Google-Smtp-Source: APXvYqygZ+KVi++hh+euTK8XvhkCXA8rOQEzZMPxXR2XJFN4hOTQQEswEDawEiJ2A/OyXDIfxujd
+X-Received: by 2002:a17:90a:9a83:: with SMTP id e3mr6803984pjp.105.1561651555324;
+        Thu, 27 Jun 2019 09:05:55 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1561651555; cv=none;
+        d=google.com; s=arc-20160816;
+        b=lbS4+AB4lYxCcqKS9GYa3eLtlQLfa0GiC4vpAQS8rk9AvNitj8H7P50zKRoEFO62Yh
+         Sre4PMOOEXEjOn645f54QzPG7MmAoDxUKHOUN/1/6sIpfGuOTUG3BkwlmirTyTfmV3VS
+         Bp47DFi3N18hVZpcAIdD7jjSiwezbChL/sd372EseN2EOhGt1TNr0CpCMc/Rtg0CBZov
+         e30BCIuyP/oQLcSXBdGOH7Wl89mvAQ2/hnRYvZKN8s4ra+Wi4uh7vXHxpasF73qG7F8J
+         mLUv1Oo+JxgRrfVSDJACN5KbVDsil//Y6XrSlkHs0L+ay/FBREeWpYMTUlKBy1OEZxfi
+         r02A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:message-id:from:subject:date:list-unsubscribe:reply-to
+         :mime-version:to:dkim-signature;
+        bh=p3+BBQBGc0ckEdGo4AUWoG6QT/4fkbyfAO2BHfB+JUw=;
+        b=pYS8W7on76PTLtUPJGV/rxE6oivZtPzP5VCKLkS01F9kWM3pfHr3eDZikNdMGYUyAP
+         VlbusJuTTZF1mUbnKk2oyn35mAjYxJZ0p1yzbf5VR7wVSe/1eU/qWwZBjJD+54sGWcVQ
+         2H4CN/cDLplWaaoPqzv0N0kwmZSZrs1Ez6B3X5f4mPz6CQomkdy8daRB8YSu4Nm2VKwY
+         tFLTBGK54doFr+ko46OFRCbob+vU+SAgU6TTK1RlrW+FXdUx5AUK1Gv9DupOYG0wgaDy
+         jNdocU84hG/uNMaNbDW/S9BX5CMLUPLM9yclyM/ke/4BNq64cjDcXtFYOJh9If3aiv1/
+         kvEQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@booking-automation.intercom-mail.com header.s=intercom header.b=qg6pDh65;
+       spf=pass (google.com: domain of bounces+22636747580@rp.booking-automation.intercom-mail.com designates 54.68.3.111 as permitted sender) smtp.mailfrom=bounces+22636747580@rp.booking-automation.intercom-mail.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=intercom-mail.com
+Return-Path: <bounces+22636747580@rp.booking-automation.intercom-mail.com>
+Received: from mta1a11.spe.intercom-mail.com (mta1a11.spe.intercom-mail.com. [54.68.3.111])
+        by mx.google.com with ESMTPS id k25si1238617pgb.36.2019.06.27.09.05.54
+        for <rhysfhillier@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Thu, 27 Jun 2019 09:05:55 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+22636747580@rp.booking-automation.intercom-mail.com designates 54.68.3.111 as permitted sender) client-ip=54.68.3.111;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@booking-automation.intercom-mail.com header.s=intercom header.b=qg6pDh65;
+       spf=pass (google.com: domain of bounces+22636747580@rp.booking-automation.intercom-mail.com designates 54.68.3.111 as permitted sender) smtp.mailfrom=bounces+22636747580@rp.booking-automation.intercom-mail.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=intercom-mail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=booking-automation.intercom-mail.com; s=intercom; t=1561651554; i=@booking-automation.intercom-mail.com; bh=p3+BBQBGc0ckEdGo4AUWoG6QT/4fkbyfAO2BHfB+JUw=; h=To:Content-Type:Date:Subject:From:Message-ID; b=qg6pDh65zhN+Va1bi64kDd2ROiHCAbHwzNjLvyxRZfPOJg+NkA4+x0y5XYioJJ5J5
+	 ll5i03bI/V+psSDaCLi4GQQc31Ppj6+hGCw4XXE8aTdlPPaBYP19QIR5VwlUj8TNyn
+	 Om5+PjhC1xaOejvvD4AgUsnQL7BR8oGPgdrinln4=
+X-MSFBL: QIZfy1+LXbaxVzZSPI5OSC+hbUruFDt6h2NxDuENP9o=|eyJ0ZW5hbnRfaWQiOiJ pbnRlcmNvbSIsImN1c3RvbWVyX2lkIjoiMSIsIm1lc3NhZ2VfaWQiOiIwMDIzNjJ lOTE0NWRkMTM1YjFlOCIsInIiOiJyaHlzZmhpbGxpZXJAZ21haWwuY29tIiwic3V iYWNjb3VudF9pZCI6IjQ2NDEzIn0=
+To: rhysfhillier@gmail.com
+Content-Type: multipart/alternative; boundary="_----u3niuq3Thq6eHNhwR5z5EQ===_B6/8E-13777-269E41D5"
+MIME-Version: 1.0
+Reply-To: Thomas from Booking Automation <thomas@booking-automation.intercom-mail.com>
+List-Unsubscribe: <mailto:unsubscribe_22636747580_5d14df9d450f4ec7c1e7fdb2@booking-automation.intercom-mail.com>, <https://booking-automation.intercom-mail.com/subscriptions/unsubscribe?app_id=xx862dw8&conversation_id=22636747580&user_id=5d14df9d450f4ec7c1e7fdb2>
+Date: Thu, 27 Jun 2019 16:05:54 +0000
+Subject: Free Booking Automation Set-up
+X-Mailgun-Tag: user-personal-new
+X-Intercom-App-Id: xx862dw8
+X-Intercom-Bin: 500
+From: Thomas from Booking Automation <thomas@booking-automation.intercom-mail.com>
+Message-ID: <220c7883-2c1a5ad0-1561651553-22636747580@booking-automation.intercom-mail.com>
+X-Mailgun-Track-Clicks: no
+X-Mailgun-Track-Opens: no
+X-Auto-Response-Suppress: OOF, AutoReply
+X-Mailgun-Variables: {"app_id":"xx862dw8","conversation_id":"22636747580","intercom_message_id":211829670,"user_id":"5d14df9d450f4ec7c1e7fdb2"}
+Feedback-ID: 211829670:xx862dw8:intercom
